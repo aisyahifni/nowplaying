@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+  <title>#nowplaying</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/style.css">
+    <link href='https://fonts.googleapis.com/css?family=ABeeZee' rel='stylesheet'>
+        <style>
+        body {
+            font-family: 'ABeeZee';
+        }
+        </style>
+</head>
+<body>
+  <div class="page-header">
+    <h1>#nowplaying, <small>what's playing?</small></h1>
+  </div>
+	<div class="main-container"></div>
+        <div class ="left">
+
+            <nav id="navbarup" class="navbar navbar-default navbar-static-top" role="navigation">
+              <div class="container">
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <!-- <span class="icon-bar"></span>
+                    <span class="icon-bar"></span> -->
+                  </button>
+                  <!-- <a class="navbar-brand" href="">
+                    <span class="navbar-logo">nowplaying</span>
+                    <span class="navbar-title">nowplaying</span>
+                  </a> -->
+                </div>
+
+                <!-- <ul class="nav nav-tabs">
+                  <li role="presentation" class="active"><a href="#">Home</a></li>
+                  <li role="presentation"><a id="loginButton" href="#">About</a></li>
+                  <li role="presentation"><a href="https://getbootstrap.com/docs/3.4/components/#input-groups">Source code</a></li>
+                </ul> -->
+    
+                <!-- Collect the nav links, forms, and other content for toggling on mobile -->
+                <div class="collapse navbar-collapse" id="navbar-collapse-1">
+                  <ul class="nav navbar-nav navbar-right">
+                    <li><a id="loginButton" href="#">Connect to Spotify</a></li>
+                    <li class="dropdown" data-bind="visible: isLoggedIn()">
+                      <img class="profile-image" data-bind="attr:{src: userImage}"/>
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                      <span id="display-name" data-bind="text: displayName"></span>
+                      <span class="icon-chevron-down"></span></a>
+                      <ul class="dropdown-menu dropdown-menu-left" role="menu">
+                        <li><a id="logoutButton" href="#" style="display: none;">Log Out</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div><!-- /.container -->
+            </nav>
+		<section>
+			<form class="form-inline" action="/" method="POST">
+        <label for="username">username:</label>
+          <input type="username" id="username" placeholder="@" name="username">
+          <br>
+          <button type="submit">GO</button>
+      </form>
+
+      <div class="welcome">
+        <h3>Hi! Please insert your Twitter username in the box above. <br>
+        We will give you a list of songs recommendation based on <br>
+        your tweets with the hashtag #nowplaying that you tweeted <br>
+        in the past week. In order to save the playlist we have created <br>
+        for you, please click on the Log In button and give access to <br>
+        your Spotify account.</h3>
+        <p><a class="btn btn-primary btn-lg" href="#" role="button">Connect to Spotify</a></p>
+      </div>
+		</section>
+	</div>
+</body>
+<script>
+  localStorage.getItem('ae_display_name');
+  document.querySelector("#display-name").textContent = localStorage.getItem('ae_display_name');
+  localStorage.getItem('ae_user_image');
+  document.querySelector("#profile-image").textContent = localStorage.getItem('ae_user_image');
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/spotify-web-api-js/1.5.1/spotify-web-api.min.js" integrity="sha512-d3KSqJU2Ts1Ff6GMriq9BUWqJo3pl0efxSIOv+L0e2hMCShq6QCWtSnbOyMRXDHIoAjSSQoGsjScJ84J/K6hYQ==" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+<script src="../static/oauth-config.js"></script>
+<script src="../static/oauth-manager.js"></script>
+<script src="../static/script.js"></script>
+</html>
